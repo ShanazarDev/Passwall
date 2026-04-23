@@ -12,7 +12,6 @@ echo "Running as root..."
 sleep 2
 clear
 
-uci set system.@system[0].zonename='Asia/Tehran'
 
 uci set network.wan.peerdns="0"
 
@@ -54,7 +53,7 @@ opkg update
 
 ### Add Src ###
 
-wget -O passwall.pub https://master.dl.sourceforge.net/project/openwrt-passwall-build/passwall.pub
+wget -O passwall.pub https://master.dl.sourceforge.net/project/openwrt-passwall-build/ipk.pub
 
 opkg-key add passwall.pub
 
@@ -230,15 +229,6 @@ uci set passwall2.myshunt.Direct='_direct'
 uci commit passwall2
 
 uci commit system
-
-uci set system.@system[0].hostname=By-AmirHossein
-
-uci commit system
-
-uci set dhcp.@dnsmasq[0].rebind_domain='www.ebanksepah.ir 
-my.irancell.ir'
-
-uci commit
 
 echo -e "${YELLOW}** Installation Completed ** ${ENDCOLOR}"
 echo -e "${MAGENTA} Made With Love By : AmirHossein ${ENDCOLOR}"
