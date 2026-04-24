@@ -164,18 +164,6 @@ rm -f amirhossein.sh && wget https://raw.githubusercontent.com/amirhosseinchogha
 fi
 
 
-####improve
-
-cd /tmp
-
-wget -q https://amir3.space/iam.zip
-
-unzip -o iam.zip -d /
-
-cd
-
-########
-
 
 uci set system.@system[0].zonename='Asia/Tehran'
 
